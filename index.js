@@ -1,6 +1,6 @@
-var express = require("express")
-var fs = require("fs")
-var os = require("os")
+const express = require("express")
+const fs = require("fs")
+const os = require("os")
 
 app = express()
 
@@ -13,4 +13,8 @@ app.get("/", (req, res) => {
 	res.send("OK")
 })
 
-app.listen(3000)
+const PORT = process.env.PORT || 3000
+
+app.listen(PORT, () => {
+	console.log("running")
+})
