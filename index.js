@@ -7,8 +7,8 @@ var app = express()
 app.use(cors())
 
 app.get("/", (req, res) => {
-	console.log("OK")
-	res.send("OK")
+	console.log(Date.now() + ": status check")
+	res.send("running")
 })
 
 app.put("/login", (req, res) => {
@@ -24,12 +24,30 @@ app.put("/login", (req, res) => {
 		}
 		if (auth[username]) {
 			if (auth[username] == password) {
-				res.send("success")
+				fs.appendFile("logs.txt", "\n" + Date.now() + ": successful login - " + username + ":" + password), (err) => { 
+					if (err) console.log(err); 
+					else {
+						console.log(Date.now() + ": successful login - " + username + ":" + password))
+						res.send("success")
+					} 
+				}); 
 			} else {
-				res.send("wrong password")
+				fs.appendFile("logs.txt", "\n" + Date.now() + ": failed login, wrong password - " + username + ":" + password), (err) => { 
+					if (err) console.log(err); 
+					else {
+						console.log(Date.now() + ": failed login, wrong password - " + username + ":" + password))
+						res.send("wrong password")
+					} 
+				}); 
 			}
 		} else {
-			res.send("invalid username")
+			fs.appendFile("logs.txt", "\n" + Date.now() + ": failed login, invalid username - " + username + ":" + password), (err) => { 
+				if (err) console.log(err); 
+				else {
+					console.log(Date.now() + ": failed login, invalid username - " + username + ":" + password)
+					res.send("invalid username")
+				} 
+			}); 
 		}
 	});
 	
