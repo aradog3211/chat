@@ -24,24 +24,24 @@ app.put("/login", (req, res) => {
 		}
 		if (auth[username]) {
 			if (auth[username] == password) {
-				fs.appendFile("logs.txt", "\n" + Date.now() + ": successful login - " + username + ":" + password), (err) => { 
+				fs.appendFile("logs.txt", "\n" + Date.now() + ": successful login - " + username + ":" + password, (err) => { 
 					if (err) console.log(err); 
 					else {
-						console.log(Date.now() + ": successful login - " + username + ":" + password))
+						console.log(Date.now() + ": successful login - " + username + ":" + password)
 						res.send("success")
 					} 
 				}); 
 			} else {
-				fs.appendFile("logs.txt", "\n" + Date.now() + ": failed login, wrong password - " + username + ":" + password), (err) => { 
+				fs.appendFile("logs.txt", "\n" + Date.now() + ": failed login, wrong password - " + username + ":" + password, (err) => { 
 					if (err) console.log(err); 
 					else {
-						console.log(Date.now() + ": failed login, wrong password - " + username + ":" + password))
+						console.log(Date.now() + ": failed login, wrong password - " + username + ":" + password)
 						res.send("wrong password")
 					} 
 				}); 
 			}
 		} else {
-			fs.appendFile("logs.txt", "\n" + Date.now() + ": failed login, invalid username - " + username + ":" + password), (err) => { 
+			fs.appendFile("logs.txt", "\n" + Date.now() + ": failed login, invalid username - " + username + ":" + password, (err) => { 
 				if (err) console.log(err); 
 				else {
 					console.log(Date.now() + ": failed login, invalid username - " + username + ":" + password)
