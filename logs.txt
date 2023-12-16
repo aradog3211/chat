@@ -114,3 +114,318 @@
 1702587564589: successful fetch - xico:123
 1702587642600: successful login - xico:123
 1702587642607: successful fetch - xico:123
+1702727418964: failed login, invalid username - 123:
+1702727424012: successful login - xico:123
+1702727424018: successful fetch - xico:123
+1702727999479: successful login - xico:123
+1702727999486: successful fetch - xico:123
+1702728001864: failed login, invalid username - [object HTMLInputElement]:[object HTMLInputElement]
+1702728012587: failed login, invalid username - [object HTMLInputElement]:[object HTMLInputElement]
+1702728036075: successful login - xico:123
+1702728036080: successful fetch - xico:123
+1702728037157: failed to create new message, invalid username - [object HTMLInputElement]:[object HTMLInputElement], message: wergergwerg
+1702728071535: successful login - xico:123
+1702728071544: successful fetch - xico:123
+1702728072386: successfully created new message - xico:123, message: wergergwerg
+1702728125641: successful login - xico:123
+1702728125649: successful fetch - xico:123
+1702728126277: successfully created new message - xico:123, message: wergergwerg
+1702728138101: successful login - xico:123
+1702728138107: successful fetch - xico:123
+1702728515193: successful login - xico:123
+1702728515205: successful fetch - xico:123
+1702728516343: successfully created new message - xico:123, message: wergergwerg
+1702728521570: successfully created new message - xico:123, message: wergergwerg
+1702728552949: successful login - xico:123
+1702728552959: successful fetch - xico:123
+1702728554674: successfully created new message - xico:123, message: wergergwerg
+1702728557368: successfully created new message - xico:123, message: wergergwerg
+1702728558269: successfully created new message - xico:123, message: wergergwerg
+1702728569948: successful login - xico:123
+1702728569957: successful fetch - xico:123
+1702728639420: successful login - xico:123
+1702728639433: successful fetch - xico:123
+1702728640826: successfully created new message - xico:123, message: wergergwerg
+1702728714366: successful login - xico:123
+1702728714379: successful fetch - xico:123
+1702728715700: successfully created new message - xico:123, message: wergergwerg
+1702728720066: successfully created new message - xico:123, message: wergergwerg
+1702728721746: successfully created new message - xico:123, message: wergergwerg
+1702728742231: successful login - qwerty:asdfgh
+1702728742235: successful fetch - qwerty:asdfgh
+1702728748576: successfully created new message - qwerty:asdfgh, message: wrbtwrtb
+1702728752556: successfully created new message - qwerty:asdfgh, message: wrbtwrtb
+1702728757749: successfully created new message - qwerty:asdfgh, message: wrbtwrtb
+1702728760539: successfully created new message - qwerty:asdfgh, message: wrbtwrtby
+1702728812553: successful login - xico:123
+1702728812562: successful fetch - xico:123
+1702728829725: successfully created new message - xico:123, message: wergergwerg
+1702728836416: successful login - xico:123
+1702728836422: successful fetch - xico:123
+1702728841826: successful login - xico:123
+1702728841832: successful fetch - xico:123
+1702728870491: successful login - xico:123
+1702728870498: successful fetch - xico:123
+1702728877499: successfully created new message - xico:123, message: wergergwerg
+1702728917753: successful login - xico:123
+1702728917763: successful fetch - xico:123
+1702728919981: successfully created new message - xico:123, message: wergergwerg
+1702728964041: successful login - xico:123
+1702728964047: successful fetch - xico:123
+1702728965074: successfully created new message - xico:123, message: wergergwerg
+1702728966352: successfully created new message - xico:123, message: wergergwerg
+1702728968906: successfully created new message - xico:123, message: wergergwergg
+1702728992773: successfully created new message - xico:123, message: wergergwergg
+1702728995521: successfully created new message - xico:123, message: wergergwergg
+1702728998190: successfully created new message - xico:123, message: wergergwerggghggh
+1702729012080: successful login - xico:123
+1702729012085: successful fetch - xico:123
+1702729014938: successfully created new message - xico:123, message: wergergwerggghgghggg
+1702729029709: successful login - xico:123
+1702729029719: successful fetch - xico:123
+1702729032032: successfully created new message - xico:123, message: wergergwerggghgghggggg
+1702729130471: successful login - xico:123
+1702729130482: successful fetch - xico:123
+1702729135473: successfully created new message - xico:123, message: lol
+1702729138330: successfully created new message - xico:123, message: lol
+1702729142269: successful login - xico:123
+1702729142276: successful fetch - xico:123
+1702729145659: successfully created new message - xico:123, message: loll
+1702729185381: successful login - xico:123
+1702729185390: successful fetch - xico:123
+1702729267246: successful login - xico:123
+1702729267254: successful fetch - xico:123
+1702729268711: successfully created new message - xico:123, message: loll
+1702729269477: successfully created new message - xico:123, message: loll
+1702729270352: successfully created new message - xico:123, message: loll
+1702729271803: successfully created new message - xico:123, message: loll
+1702729282546: successful login - xico:123
+1702729282556: successful fetch - xico:123
+1702729299919: successful login - xico:123
+1702729299928: successful fetch - xico:123
+1702729360300: successful login - xico:123
+1702729360310: successful fetch - xico:123
+1702729361651: successfully created new message - xico:123, message: loll
+1702729364777: successfully created new message - xico:123, message: loll123123123
+1702729368788: failed login, wrong password - qwerty:123
+1702729374583: successful login - qwerty:asdfgh
+1702729374590: successful fetch - qwerty:asdfgh
+1702729376435: successfully created new message - qwerty:asdfgh, message: wrbtwrtby
+1702729379921: successful login - xico:123
+1702729379939: successful fetch - xico:123
+1702729382023: successfully created new message - xico:123, message: loll123123123gerwgerg
+1702729382838: successfully created new message - xico:123, message: loll123123123gerwgerg
+1702729387156: successfully created new message - qwerty:asdfgh, message: ok
+1702729862355: successful login - xico:123
+1702729862364: successful fetch - xico:123
+1702729863371: successful fetch - xico:123
+1702729865413: successful fetch - xico:123
+1702729866427: successful fetch - xico:123
+1702729866776: successfully created new message - qwerty:asdfgh, message: ok
+1702729867431: successful fetch - xico:123
+1702729868489: successful fetch - xico:123
+1702729869490: successful fetch - xico:123
+1702729870569: successful fetch - xico:123
+1702729871568: successful fetch - xico:123
+1702729872689: successful fetch - xico:123
+1702729873706: successful fetch - xico:123
+1702729874733: successful fetch - xico:123
+1702729875746: successful fetch - xico:123
+1702729876768: successful fetch - xico:123
+1702729877792: successful fetch - xico:123
+1702729878810: successful fetch - xico:123
+1702729879832: successful fetch - xico:123
+1702729880847: successful fetch - xico:123
+1702729881867: successful fetch - xico:123
+1702729882891: successful fetch - xico:123
+1702729883906: successful fetch - xico:123
+1702729884927: successful fetch - xico:123
+1702729885948: successful fetch - xico:123
+1702729886965: successful fetch - xico:123
+1702729887991: successful fetch - xico:123
+1702729889008: successful fetch - xico:123
+1702729890027: successful fetch - xico:123
+1702729891045: successful fetch - xico:123
+1702729892066: successful fetch - xico:123
+1702729893087: successful fetch - xico:123
+1702729894107: successful fetch - xico:123
+1702729895128: successful fetch - xico:123
+1702729896146: successful fetch - xico:123
+1702729897858: successful login - xico:123
+1702729897863: successful fetch - xico:123
+1702729899715: successful fetch - xico:123
+1702729900346: successfully created new message - qwerty:asdfgh, message: ok
+1702729900715: successful fetch - xico:123
+1702729901720: successful fetch - xico:123
+1702729902731: successful fetch - xico:123
+1702729904023: successful fetch - xico:123
+1702729904248: successfully created new message - qwerty:asdfgh, message: ok123123
+1702729905026: successful fetch - xico:123
+1702729906136: successful fetch - xico:123
+1702729907137: successful fetch - xico:123
+1702729908141: successful fetch - xico:123
+1702729909193: successful fetch - xico:123
+1702729910193: successful fetch - xico:123
+1702729911299: successful fetch - xico:123
+1702729912297: successful fetch - xico:123
+1702729913297: successful fetch - xico:123
+1702729914296: successful fetch - xico:123
+1702729915388: successful fetch - xico:123
+1702729916185: successfully created new message - xico:123, message: loll123123123gerwgerg
+1702729916388: successful fetch - xico:123
+1702729918335: successful fetch - xico:123
+1702729919337: successful fetch - xico:123
+1702729920341: successful fetch - xico:123
+1702729921345: successful fetch - xico:123
+1702729921579: failed login, wrong password - qwerty:123
+1702729922346: successful fetch - xico:123
+1702729923347: successful fetch - xico:123
+1702729924352: successful fetch - xico:123
+1702729925361: successful fetch - xico:123
+1702729926369: successful fetch - xico:123
+1702729926731: successful login - qwerty:asdfgh
+1702729926734: successful fetch - qwerty:asdfgh
+1702729927377: successful fetch - xico:123
+1702729927740: successful fetch - qwerty:asdfgh
+1702729928378: successful fetch - xico:123
+1702729929378: successful fetch - xico:123
+1702729929689: successful fetch - qwerty:asdfgh
+1702729930384: successful fetch - xico:123
+1702729930689: successful fetch - qwerty:asdfgh
+1702729931386: successful fetch - xico:123
+1702729931693: successful fetch - qwerty:asdfgh
+1702729932181: successfully created new message - xico:123, message: boo
+1702729932390: successful fetch - xico:123
+1702729932694: successful fetch - qwerty:asdfgh
+1702729933698: successful fetch - qwerty:asdfgh
+1702729934147: successful fetch - xico:123
+1702729934698: successful fetch - qwerty:asdfgh
+1702729935154: successful fetch - xico:123
+1702729935703: successful fetch - qwerty:asdfgh
+1702729936159: successful fetch - xico:123
+1702729936703: successful fetch - qwerty:asdfgh
+1702729937167: successful fetch - xico:123
+1702729937705: successful fetch - qwerty:asdfgh
+1702729938173: successful fetch - xico:123
+1702729938704: successful fetch - qwerty:asdfgh
+1702729939180: successful fetch - xico:123
+1702729939766: successful fetch - qwerty:asdfgh
+1702729940179: successful fetch - xico:123
+1702729940779: successful fetch - qwerty:asdfgh
+1702729941186: successful fetch - xico:123
+1702729942067: successful fetch - qwerty:asdfgh
+1702729942187: successful fetch - xico:123
+1702729943066: successful fetch - qwerty:asdfgh
+1702729943194: successful fetch - xico:123
+1702729944070: successful fetch - qwerty:asdfgh
+1702729944195: successful fetch - xico:123
+1702729945071: successful fetch - qwerty:asdfgh
+1702729945199: successful fetch - xico:123
+1702729946074: successful fetch - qwerty:asdfgh
+1702729946199: successful fetch - xico:123
+1702729947205: successful fetch - xico:123
+1702729947312: successful fetch - qwerty:asdfgh
+1702729948203: successful fetch - xico:123
+1702729948316: successful fetch - qwerty:asdfgh
+1702729949209: successful fetch - xico:123
+1702729949317: successful fetch - qwerty:asdfgh
+1702729950209: successful fetch - xico:123
+1702729950317: successful fetch - qwerty:asdfgh
+1702729951214: successful fetch - xico:123
+1702729951322: successful fetch - qwerty:asdfgh
+1702729952215: successful fetch - xico:123
+1702729952326: successful fetch - qwerty:asdfgh
+1702729953215: successful fetch - xico:123
+1702729953330: successful fetch - qwerty:asdfgh
+1702729954215: successful fetch - xico:123
+1702729954334: successful fetch - qwerty:asdfgh
+1702729955221: successful fetch - xico:123
+1702729955334: successful fetch - qwerty:asdfgh
+1702729956222: successful fetch - xico:123
+1702729956338: successful fetch - qwerty:asdfgh
+1702729957227: successful fetch - xico:123
+1702729957339: successful fetch - qwerty:asdfgh
+1702729958226: successful fetch - xico:123
+1702729958342: successful fetch - qwerty:asdfgh
+1702729959227: successful fetch - xico:123
+1702729959346: successful fetch - qwerty:asdfgh
+1702729960227: successful fetch - xico:123
+1702729960350: successful fetch - qwerty:asdfgh
+1702729961231: successful fetch - xico:123
+1702729961354: successful fetch - qwerty:asdfgh
+1702729962233: successful fetch - xico:123
+1702729962358: successful fetch - qwerty:asdfgh
+1702729963235: successful fetch - xico:123
+1702729963358: successful fetch - qwerty:asdfgh
+1702729964236: successful fetch - xico:123
+1702729964362: successful fetch - qwerty:asdfgh
+1702729965236: successful fetch - xico:123
+1702729965362: successful fetch - qwerty:asdfgh
+1702729966236: successful fetch - xico:123
+1702729966366: successful fetch - qwerty:asdfgh
+1702729967243: successful fetch - xico:123
+1702729967369: successful fetch - qwerty:asdfgh
+1702729968241: successful fetch - xico:123
+1702729968374: successful fetch - qwerty:asdfgh
+1702729969249: successful fetch - xico:123
+1702729969374: successful fetch - qwerty:asdfgh
+1702729970248: successful fetch - xico:123
+1702729970378: successful fetch - qwerty:asdfgh
+1702729971379: successful fetch - qwerty:asdfgh
+1702729972038: successful fetch - xico:123
+1702729972385: successful fetch - qwerty:asdfgh
+1702729973041: successful fetch - xico:123
+1702729973382: successful fetch - qwerty:asdfgh
+1702729974043: successful fetch - xico:123
+1702729974389: successful fetch - qwerty:asdfgh
+1702729975043: successful fetch - xico:123
+1702729975389: successful fetch - qwerty:asdfgh
+1702729976047: successful fetch - xico:123
+1702729976390: successful fetch - qwerty:asdfgh
+1702729977048: successful fetch - xico:123
+1702729977392: successful fetch - qwerty:asdfgh
+1702729978052: successful fetch - xico:123
+1702729978404: successful fetch - qwerty:asdfgh
+1702729979059: successful fetch - xico:123
+1702729979391: successful fetch - qwerty:asdfgh
+1702729980064: successful fetch - xico:123
+1702729980408: successful fetch - qwerty:asdfgh
+1702729981065: successful fetch - xico:123
+1702729981407: successful fetch - qwerty:asdfgh
+1702729982069: successful fetch - xico:123
+1702729982409: successful fetch - qwerty:asdfgh
+1702729983071: successful fetch - xico:123
+1702729983408: successful fetch - qwerty:asdfgh
+1702729984074: successful fetch - xico:123
+1702729984663: successful fetch - qwerty:asdfgh
+1702729985080: successful fetch - xico:123
+1702729986082: successful fetch - xico:123
+1702729986570: successful fetch - qwerty:asdfgh
+1702729987082: successful fetch - xico:123
+1702729987614: successful fetch - qwerty:asdfgh
+1702729988083: successful fetch - xico:123
+1702729988574: successful fetch - qwerty:asdfgh
+1702729989084: successful fetch - xico:123
+1702729989574: successful fetch - qwerty:asdfgh
+1702729990089: successful fetch - xico:123
+1702729990578: successful fetch - qwerty:asdfgh
+1702730078363: successful fetch - xico:123
+1702730078767: successful fetch - qwerty:asdfgh
+1702730079375: successful fetch - xico:123
+1702730079767: successful fetch - qwerty:asdfgh
+1702730080381: successful fetch - xico:123
+1702730080768: successful fetch - qwerty:asdfgh
+1702730081388: successful fetch - xico:123
+1702730081772: successful fetch - qwerty:asdfgh
+1702730082388: successful fetch - xico:123
+1702730082961: successful fetch - qwerty:asdfgh
+1702730089319: successful login - qwerty:asdfgh
+1702730089327: successful fetch - qwerty:asdfgh
+1702730092493: successful login - xico:123
+1702730092499: successful fetch - xico:123
+1702730099729: successful fetch - qwerty:asdfgh
+1702730102710: successful fetch - xico:123
+1702730109730: successful fetch - qwerty:asdfgh
+1702730112709: successful fetch - xico:123
+1702730119730: successful fetch - qwerty:asdfgh
+1702730123732: successful fetch - xico:123
