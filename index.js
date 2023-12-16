@@ -73,7 +73,7 @@ app.put("/fetch", (req, res) => {
 							data = data.split("\n")
 							let messages = []
 							for (var x of data) {
-								messages.push({message: x.split(" ")[2], time: x.split(" ")[0], username: x.split(" ")[1]})
+								messages.push({message: x.split("&&")[2], time: x.split("&&")[0], username: x.split("&&")[1]})
 							}
 							res.send(messages)
 						})
@@ -118,12 +118,12 @@ app.post("/new", (req, res) => {
 					console.log(Date.now() + ": successfully created new message - " + username + ":" + password + ", message: " + message)
 					if (err) console.log(err); 
 					else {
-						fs.appendFile('data.txt', "\n" + Date.now() + " " + username + " " + message, function(err) {
+						fs.appendFile('data.txt', "\n" + Date.now() + "&&" + username + "&&" + message, function(err) {
 							fs.readFile("data.txt", "utf8", function(err, data) {
 								data = data.split("\n")
 								let messages = []
 								for (var x of data) {
-									messages.push({message: x.split(" ")[2], time: x.split(" ")[0], username: x.split(" ")[1]})
+									messages.push({message: x.split("&&")[2], time: x.split("&&")[0], username: x.split("&&")[1]})
 								}
 								res.send(messages)
 							})
@@ -153,6 +153,12 @@ app.post("/new", (req, res) => {
 
 app.get("/logs", (req, res) => {
 	fs.readFile("logs.txt", (err, result) => {
+		res.send(result)
+	})
+})
+
+app.get("/messages", (req, res) => {
+	fs.readFile("data.txt", (err, result) => {
 		res.send(result)
 	})
 })
