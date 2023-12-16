@@ -1,0 +1,168 @@
+<html>
+	<head>
+		<style>
+			body {
+				background: white;
+				padding: 15px;	
+			}
+				
+			* {
+				margin: 0;
+			}
+	
+			#messages {
+				display: flex;
+				flex-direction: column;
+				gap: 20px;
+				opacity: 1;
+			}
+			
+			.main {
+			}
+			
+			.info {
+				display: flex;
+				align-items: center;
+				justify-content: flex-start;
+				gap: 5px
+			}
+			
+			.infotext {
+				font-size: 10px;
+			}
+			
+			.message {
+				font-size: 15px;
+				background: white;
+			}
+			
+			#sendbox {
+				marginTop: 20px;
+				display: none;
+			}
+		</style>
+		<script>
+			const dev = "http://localhost:3000/"
+			const prod = "https://banananananan.onrender.com/"
+			const backend = dev
+			
+			let un = null
+			let pw = null
+			
+			function httpGet(theUrl) {
+			    var xmlHttp = new XMLHttpRequest();
+			    xmlHttp.open( "GET", theUrl, "false" ); // false for synchronous request
+			    xmlHttp.send( null );
+			    return xmlHttp;
+			}
+			
+			function timeDifference(current, previous) {
+			    var msPerMinute = 60 * 1000;
+			    var msPerHour = msPerMinute * 60;
+			    var msPerDay = msPerHour * 24;
+			    var msPerMonth = msPerDay * 30;
+			    var msPerYear = msPerDay * 365;
+			    var elapsed = current - previous;
+			    if (elapsed < msPerMinute) {
+				 return Math.round(elapsed/1000) + 's ago';   
+			    }
+			    else if (elapsed < msPerHour) {
+				 return Math.round(elapsed/msPerMinute) + 'm ago';   
+			    }
+			    else if (elapsed < msPerDay ) {
+				 return Math.round(elapsed/msPerHour ) + 'h ago';   
+			    }
+			    else if (elapsed < msPerMonth) {
+				return Math.round(elapsed/msPerDay) + 'd ago';   
+			    }
+			    else if (elapsed < msPerYear) {
+				return Math.round(elapsed/msPerMonth) + 'mo ago';   
+			    }
+			    else {
+				return Math.round(elapsed/msPerYear ) + 'y ago';   
+			    }
+			}
+			
+			window.onload = () => {
+				document.getElementById("button").addEventListener("click", (e) => {
+					const username = document.getElementById("username").value
+					const password = document.getElementById("password").value
+					fetch(backend + "login", {
+						method: "PUT",
+				        	headers: {
+						 	'Content-type': 'application/json; charset=UTF-8',
+							'username': username,
+							'password': password,
+						},
+					})
+					  .then(
+					    response => response.text()
+					  ).then(
+					    text => {
+					    	if (text === "success") {
+					    		un = username
+					    		pw = password
+    							fetch(backend + "fetch", {
+								method: "PUT",
+								headers: {
+								 	'Content-type': 'application/json; charset=UTF-8',
+									'username': username,
+									'password': password,
+								},
+							})
+							  .then(
+							    response => response.json()
+							  ).then(
+							    data => {
+						    		document.getElementById("login").style.display = "none"
+						    		document.getElementById("sendbox").style.display = "block"
+						    		for (var x of data) {
+						    			const main = document.createElement("div")
+						    			const t = document.createElement("p") 
+						    			const time = document.createTextNode(timeDifference(Date.now(), x.time))
+						    			const m = document.createElement("p") 
+						    			const message = document.createTextNode(x.message)
+						    			const u = document.createElement("p") 
+						    			const username = document.createTextNode(x.username)
+						    			const info = document.createElement("div")									
+						    			t.appendChild(time)
+						    			t.classList.add("infotext")
+						    			m.appendChild(message)
+						    			m.classList.add("message")
+						    			u.appendChild(username)
+						    			u.classList.add("infotext")
+						    			info.appendChild(u)
+						    			info.appendChild(t)
+						    			info.classList.add("info")
+						    			main.appendChild(m)
+						    			main.appendChild(info)
+						    			main.classList.add("main")
+						    			document.getElementById("messages").appendChild(main)
+						    		}
+							    }
+							  );
+					    	} else alert(text)
+					    }
+					  );
+				})
+				document.getElementById("sendbutton").addEventListener("click", (e) => {
+					console.log(document.getElementById("send").value)
+				})
+			}
+		</script>
+	</head>
+	<body>
+		<div id="login">
+			<h1>login</h1>
+			<p>username</p>
+			<input id="username"></input>
+			<p>password</p>
+			<input type="password" id="password"></input>
+			<button id="button">enter</button>
+		</div>
+		<div id="messages"></div>
+		<div id="sendbox">
+			<input id="send"></input><button id="sendbutton">send</button>
+		</div>
+	</body>
+</html>
