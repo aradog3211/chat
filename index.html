@@ -18,7 +18,7 @@
 			#app {
 				width: 100vw;
 				height: 100vh;
-				background: linear-gradient(rgb(220, 62, 147), rgb(28, 75, 179));
+				background: linear-gradient(#FFBE0B, #F42B03);
 				display: flex;
 				align-items: center;
 				justify-content: center;
@@ -46,11 +46,18 @@
 				width: 100%;
 			}
 	
-			#messages {
+			#messages-box {
+				background: white;
+				width: 85%;
+				max-width: 400px;
+				height: 600px;
+				max-height: 75%;
+				border-radius: 3px;
 				display: flex;
 				flex-direction: column;
-				gap: 20px;
-				opacity: 1;
+				align-items: center;
+				justify-content: space-between;
+				display: none;
 			}
 			
 			.main {
@@ -73,8 +80,40 @@
 			}
 			
 			#sendbox {
-				marginTop: 20px;
-				display: none;
+				width: 100%;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				height: 80px;
+				background: transparent;
+				margin-top: -80px;
+			}
+			
+			#send {
+				width: calc(100% - 120px);
+				background: rgb(230, 230, 230);
+				height: 50px;
+				border-radius: 10000px;
+				border: none;
+				padding: 0 20px;
+				margin-right: 10px;
+				font-size: 16px;
+			}
+			
+			#send:focus {
+				outline: none;
+			}
+			
+			#sendbutton {
+				width: 50px;
+				height: 50px;
+				border-radius: 10000px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				background: #F42B03;
+				padding: 0;
+				margin: 0;
 			}
 			
 			.input-box {
@@ -111,18 +150,20 @@
 			#button {
 				width: 75%;
 				border-radius: 1px;
-				background: rgb(220, 62, 147);
+				background: #F42B03;
 				padding: 20px 15px;
 				display: flex;
 				align-items: center;
 				justify-content: center;
 				margin-top: 10px;
+				cursor: pointer;
 			}
 			
 			#enter-text {
 				margin: 0;
 				color: white;
 				font-weight: 800;
+				user-select: none;
 			}
 			
 			#req-text {
@@ -134,6 +175,91 @@
 			.underline {
 				text-decoration: underline;
 				user-select: none;	
+				cursor: pointer;
+			}
+			
+			#messages {
+				overflow: scroll;
+				height: calc(100% - 95px);
+				padding: 15px 15px 80px 15px;
+				 -ms-overflow-style: none;  /* IE and Edge */
+			  	scrollbar-width: none;  /* Firefox */
+			  	display: flex;
+			  	flex-direction: column;
+			  	gap: 10px;
+			}
+			
+			#messages::-webkit-scrollbar {
+			  display: none;
+			}
+			
+			#send-img {
+				width: 20px;
+				height: 20px;
+			}
+			
+			.msg-cont {
+				width: 100%;
+				display: flex;
+				align-items: center;
+				justify-content: flex-start;
+			}
+			
+			.msg {
+				display: flex;
+				gap: 10px;
+				align-items: flex-end;
+				background: rgb(230, 230, 230);
+				padding: 10px;
+				border-radius: 5px;
+			}
+			
+			.time {
+				font-size: 12px;
+				color: rgb(130, 130, 130);
+				font-weight: 300;
+				margin: 0;
+			}
+			
+			.name {
+				font-size: 14px;
+				font-weight: 600;
+				margin: 0;
+				color: #F42B03;
+			}
+			
+			.mesg {
+				font-size: 16px;
+				margin: 0;
+			}
+			
+			.name-b {
+				font-size: 14px;
+				font-weight: 600;
+				margin: 0;
+				color: #F42B03;
+			}
+			
+			.msg-b {
+				display: flex;
+				gap: 10px;
+				align-items: flex-end;
+				background: #87CEEB;
+				padding: 10px;
+				border-radius: 5px;
+			}
+			
+			.msg-cont-b {
+				width: 100%;
+				display: flex;
+				align-items: center;
+				justify-content: flex-end;
+			}
+			
+			.nameandmessage-b {
+				display: flex;
+				flex-direction: column;
+				align-items: flex-end;
 			}
 		</style>
 		<script>
@@ -209,8 +335,8 @@
 							    response => response.json()
 							  ).then(
 							    data => {
-						    		document.getElementById("login").style.display = "none"
-						    		document.getElementById("sendbox").style.display = "block"
+						    		document.getElementById("login-box").style.display = "none"
+						    		document.getElementById("messages-box").style.display = "block"
 						    		for (var x of data) {
 						    			const main = document.createElement("div")
 						    			const t = document.createElement("p") 
@@ -219,21 +345,50 @@
 						    			const message = document.createTextNode(x.message)
 						    			const u = document.createElement("p") 
 						    			const username = document.createTextNode(x.username)
-						    			const info = document.createElement("div")									
-						    			t.appendChild(time)
-						    			t.classList.add("infotext")
-						    			m.appendChild(message)
-						    			m.classList.add("message")
-						    			u.appendChild(username)
-						    			u.classList.add("infotext")
-						    			info.appendChild(u)
-						    			info.appendChild(t)
-						    			info.classList.add("info")
-						    			main.appendChild(m)
-						    			main.appendChild(info)
-						    			main.classList.add("main")
-						    			document.getElementById("messages").appendChild(main)
+						    			
+						    			if (un != x.username) {
+							    			t.appendChild(time)
+							    			t.classList.add("time")
+							    			m.appendChild(message)
+							    			m.classList.add("mesg")
+							    			u.appendChild(username)
+							    			u.classList.add("name")
+							    			const nameandmessage = document.createElement("div")
+							    			nameandmessage.classList.add("nameandmessage")
+							    			nameandmessage.appendChild(u)
+							    			nameandmessage.appendChild(m)
+							    			const msg = document.createElement("div")
+							    			msg.classList.add("msg")
+							    			msg.appendChild(nameandmessage)
+							    			msg.appendChild(t)
+							    			const msgcont = document.createElement("div")
+							    			msgcont.classList.add("msg-cont")
+							    			msgcont.appendChild(msg)
+							    			document.getElementById("messages").appendChild(msgcont)
+						    			} else {
+							    			t.appendChild(time)
+							    			t.classList.add("time")
+							    			m.appendChild(message)
+							    			m.classList.add("mesg")
+							    			u.appendChild(username)
+							    			u.classList.add("name-b")
+							    			const nameandmessage = document.createElement("div")
+							    			nameandmessage.classList.add("nameandmessage-b")
+							    			nameandmessage.appendChild(u)
+							    			nameandmessage.appendChild(m)
+							    			const msg = document.createElement("div")
+							    			msg.classList.add("msg-b")
+							    			msg.appendChild(t)
+							    			msg.appendChild(nameandmessage)
+							    			const msgcont = document.createElement("div")
+							    			msgcont.classList.add("msg-cont-b")
+							    			msgcont.appendChild(msg)
+							    			document.getElementById("messages").appendChild(msgcont)
+						    			}								
+
 						    		}
+						    		document.getElementById("messages").scrollTo(0, document.getElementById("messages").scrollHeight);
+
 						    		
 						    		setInterval(() => {
     		    							fetch(backend + "fetch", {
@@ -257,21 +412,48 @@
 								    			const message = document.createTextNode(x.message)
 								    			const u = document.createElement("p") 
 								    			const username = document.createTextNode(x.username)
-								    			const info = document.createElement("div")									
-								    			t.appendChild(time)
-								    			t.classList.add("infotext")
-								    			m.appendChild(message)
-								    			m.classList.add("message")
-								    			u.appendChild(username)
-								    			u.classList.add("infotext")
-								    			info.appendChild(u)
-								    			info.appendChild(t)
-								    			info.classList.add("info")
-								    			main.appendChild(m)
-								    			main.appendChild(info)
-								    			main.classList.add("main")
-								    			document.getElementById("messages").appendChild(main)
+								    			
+								    			if (un != x.username) {
+									    			t.appendChild(time)
+									    			t.classList.add("time")
+									    			m.appendChild(message)
+									    			m.classList.add("mesg")
+									    			u.appendChild(username)
+									    			u.classList.add("name")
+									    			const nameandmessage = document.createElement("div")
+									    			nameandmessage.classList.add("nameandmessage")
+									    			nameandmessage.appendChild(u)
+									    			nameandmessage.appendChild(m)
+									    			const msg = document.createElement("div")
+									    			msg.classList.add("msg")
+									    			msg.appendChild(nameandmessage)
+									    			msg.appendChild(t)
+									    			const msgcont = document.createElement("div")
+									    			msgcont.classList.add("msg-cont")
+									    			msgcont.appendChild(msg)
+									    			document.getElementById("messages").appendChild(msgcont)
+								    			} else {
+									    			t.appendChild(time)
+									    			t.classList.add("time")
+									    			m.appendChild(message)
+									    			m.classList.add("mesg")
+									    			u.appendChild(username)
+									    			u.classList.add("name-b")
+									    			const nameandmessage = document.createElement("div")
+									    			nameandmessage.classList.add("nameandmessage-b")
+									    			nameandmessage.appendChild(u)
+									    			nameandmessage.appendChild(m)
+									    			const msg = document.createElement("div")
+									    			msg.classList.add("msg-b")
+									    			msg.appendChild(t)
+									    			msg.appendChild(nameandmessage)
+									    			const msgcont = document.createElement("div")
+									    			msgcont.classList.add("msg-cont-b")
+									    			msgcont.appendChild(msg)
+									    			document.getElementById("messages").appendChild(msgcont)
+								    			}	
 								    		}
+    								    		document.getElementById("messages").scrollTo(0, document.getElementById("messages").scrollHeight);
 								    	})
 						    		}, 10000)
 							    }
@@ -294,6 +476,7 @@
 					  .then(
 					    response => response.json()
 					  ).then(data => {
+					  	document.getElementById("send").value = ""
 					  	document.getElementById("messages").innerHTML = ""
 				    		for (var x of data) {
 				    			const main = document.createElement("div")
@@ -303,21 +486,48 @@
 				    			const message = document.createTextNode(x.message)
 				    			const u = document.createElement("p") 
 				    			const username = document.createTextNode(x.username)
-				    			const info = document.createElement("div")									
-				    			t.appendChild(time)
-				    			t.classList.add("infotext")
-				    			m.appendChild(message)
-				    			m.classList.add("message")
-				    			u.appendChild(username)
-				    			u.classList.add("infotext")
-				    			info.appendChild(u)
-				    			info.appendChild(t)
-				    			info.classList.add("info")
-				    			main.appendChild(m)
-				    			main.appendChild(info)
-				    			main.classList.add("main")
-				    			document.getElementById("messages").appendChild(main)
+				    			
+				    			if (un != x.username) {
+					    			t.appendChild(time)
+					    			t.classList.add("time")
+					    			m.appendChild(message)
+					    			m.classList.add("mesg")
+					    			u.appendChild(username)
+					    			u.classList.add("name")
+					    			const nameandmessage = document.createElement("div")
+					    			nameandmessage.classList.add("nameandmessage")
+					    			nameandmessage.appendChild(u)
+					    			nameandmessage.appendChild(m)
+					    			const msg = document.createElement("div")
+					    			msg.classList.add("msg")
+					    			msg.appendChild(nameandmessage)
+					    			msg.appendChild(t)
+					    			const msgcont = document.createElement("div")
+					    			msgcont.classList.add("msg-cont")
+					    			msgcont.appendChild(msg)
+					    			document.getElementById("messages").appendChild(msgcont)
+				    			} else {
+					    			t.appendChild(time)
+					    			t.classList.add("time")
+					    			m.appendChild(message)
+					    			m.classList.add("mesg")
+					    			u.appendChild(username)
+					    			u.classList.add("name-b")
+					    			const nameandmessage = document.createElement("div")
+					    			nameandmessage.classList.add("nameandmessage-b")
+					    			nameandmessage.appendChild(u)
+					    			nameandmessage.appendChild(m)
+					    			const msg = document.createElement("div")
+					    			msg.classList.add("msg-b")
+					    			msg.appendChild(t)
+					    			msg.appendChild(nameandmessage)
+					    			const msgcont = document.createElement("div")
+					    			msgcont.classList.add("msg-cont-b")
+					    			msgcont.appendChild(msg)
+					    			document.getElementById("messages").appendChild(msgcont)
+				    			}	
 				    		}
+				    		document.getElementById("messages").scrollTo(0, document.getElementById("messages").scrollHeight);
 					  })
 				})
 			}
@@ -336,14 +546,16 @@
 						<img src="lock.png" class="input-img"></img>
 						<input type="password" id="password" placeholder="Password" class="input"></input>
 					</div>
-					<div id="button"><p id="enter-text"s>LOGIN</p></div>
+					<div id="button"><p id="enter-text"s>ENTER</p></div>
 				</div>
 				<p id="req-text">Not a member? <span class="underline">Request account</span></p>
 			</div>
-			<div id="messages"></div>
-			<div id="sendbox">
-				<input id="send"></input><button id="sendbutton">send</button>
-			</div>
+			<div id="messages-box">
+				<div id="messages"></div>
+				<div id="sendbox">
+					<input id="send" placeholder="Message"></input><div id="sendbutton"><img src="send.png" id="send-img"></img></button>
+				</div>
+			<div>
 		</div>
 	</body>
 </html>
